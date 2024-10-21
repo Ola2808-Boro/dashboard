@@ -1,23 +1,18 @@
-import plotly
 import dash
 import os
 from dash import Dash, html, dcc, callback, Output, Input
 import dash_bootstrap_components as dbc
 import pandas as pd
-import dash_leaflet as dl
-import folium
-import geopandas
-from geodatasets import get_path
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
-from dash import dash_table
 
 dash.register_page(__name__, path="/")
 
-BASIC_PATH = "C:/Users/BorowsAl/Desktop/Heat/data/analysis_data/cluster_data_test"
+BASIC_PATH = "C:/Users/BorowsAl/Desktop/dash app/data/cluster_analysis"
 cluster_analysis_names = os.listdir(f"{BASIC_PATH}")
 
+print(f"cluster_analysis_names { cluster_analysis_names}")
 CONTENT_STYLE = {
     "margin-left": "18rem",
     "margin-right": "2rem",
@@ -36,10 +31,10 @@ DROPDOWNS_DIV_STYLE = {
 
 
 def read_data(cluster_num, params):
-    path = (
-        f"C:/Users/BorowsAl/Desktop/Heat/data/analysis_data/cluster_analysis/{params}"
+    path = f"C:/Users/BorowsAl/Desktop/dash app/data/cluster_analysis/{params}"
+    station_dataset = (
+        "C:/Users/BorowsAl/Desktop/dash app/data/station_data_selected.csv"
     )
-    station_dataset = "C:/Users/BorowsAl/Desktop/Heat/station_data_selected.csv"
     labels_dataset = f"{path}/labels_{cluster_num}.csv"
     print(f"labels_dataset {labels_dataset}")
     df_labels = pd.read_csv(f"{labels_dataset}", encoding="utf-8")

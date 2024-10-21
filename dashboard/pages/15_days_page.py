@@ -23,7 +23,7 @@ DROPDOWNS_DIV_STYLE = {
 }
 
 
-BASIC_PATH = "C:/Users/BorowsAl/Desktop/Heat/data/analysis_data/cluster_data_test"
+BASIC_PATH = "C:/Users/BorowsAl/Desktop/dash app/data/cluster_data_test"
 
 
 def read_data(case, num):
