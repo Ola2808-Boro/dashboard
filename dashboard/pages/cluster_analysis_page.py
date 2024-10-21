@@ -9,7 +9,7 @@ import numpy as np
 
 dash.register_page(__name__, path="/")
 
-BASIC_PATH = "C:/Users/BorowsAl/Desktop/dash app/data/cluster_analysis"
+BASIC_PATH = "data/cluster_analysis"
 cluster_analysis_names = os.listdir(f"{BASIC_PATH}")
 
 print(f"cluster_analysis_names { cluster_analysis_names}")
@@ -31,10 +31,8 @@ DROPDOWNS_DIV_STYLE = {
 
 
 def read_data(cluster_num, params):
-    path = f"C:/Users/BorowsAl/Desktop/dash app/data/cluster_analysis/{params}"
-    station_dataset = (
-        "C:/Users/BorowsAl/Desktop/dash app/data/station_data_selected.csv"
-    )
+    path = f"data/cluster_analysis/{params}"
+    station_dataset = "data/station_data_selected.csv"
     labels_dataset = f"{path}/labels_{cluster_num}.csv"
     print(f"labels_dataset {labels_dataset}")
     df_labels = pd.read_csv(f"{labels_dataset}", encoding="utf-8")
