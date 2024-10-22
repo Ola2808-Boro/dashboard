@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 
 app = dash.Dash(__name__, use_pages=True)
-
+server = app.server
 
 SIDEBAR_STYLE = {
     "position": "fixed",
@@ -76,4 +76,4 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, dash.page_container])
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
