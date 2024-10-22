@@ -76,4 +76,4 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, dash.page_container])
 
 
 if __name__ == "__main__":
-    app.run_server()
+    app.run_server(debug=False)
