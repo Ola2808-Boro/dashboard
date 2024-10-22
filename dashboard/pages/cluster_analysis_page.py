@@ -9,8 +9,21 @@ import numpy as np
 
 dash.register_page(__name__, path="/")
 
-BASIC_PATH = "data/cluster_analysis"
-cluster_analysis_names = os.listdir(f"{BASIC_PATH}")
+BASIC_PATH = "https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_analysis"
+
+cluster_analysis_names = [
+    "temp",
+    "all params",
+    "temp dew point",
+    "temp dew point sea level pressure",
+    "temp dew point sea level pressure heat index wind chill",
+    "temp dew point sea level pressure heat index wind chill wind speed percentage calm",
+    "temp dew point sea level pressure heat index wind chill wind speed percentage calm wind vector direction",
+    "temp dew point sea level pressure heat index wind chill wind speed percentage calm wind vector direction magnitude",
+    "temp dew point sea level pressure heat index wind chill wind speed percentage calm wind vector direction magnitude prevailing dir",
+    "temp dew point sea level pressure heat index wind chill wind speed percentage calm wind vector direction magnitude prevailing dir per",
+    "temp dew point sea level pressure heat index wind chill wind speed percentage calm wind vector direction magnitude prevailing dir per secondary dir",
+]
 
 print(f"cluster_analysis_names { cluster_analysis_names}")
 CONTENT_STYLE = {
@@ -31,8 +44,8 @@ DROPDOWNS_DIV_STYLE = {
 
 
 def read_data(cluster_num, params):
-    path = f"data/cluster_analysis/{params}"
-    station_dataset = "data/station_data_selected.csv"
+    path = f"https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_analysis/{params}"
+    station_dataset = "https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/station_data_selected.csv"
     labels_dataset = f"{path}/labels_{cluster_num}.csv"
     print(f"labels_dataset {labels_dataset}")
     df_labels = pd.read_csv(f"{labels_dataset}", encoding="utf-8")

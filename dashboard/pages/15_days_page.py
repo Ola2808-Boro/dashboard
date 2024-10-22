@@ -23,7 +23,7 @@ DROPDOWNS_DIV_STYLE = {
 }
 
 
-BASIC_PATH = "data/cluster_data_test"
+BASIC_PATH = "https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_data_test"
 
 
 def read_data(case, num):

@@ -25,7 +25,8 @@ DROPDOWNS_DIV_STYLE = {
 }
 
 
-BASIC_PATH = "data/cluster_data_test"
+BASIC_PATH = "https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_data_test"
+# https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_data_test/all%20params/9/Cluster_1/10/data_daily_spring.csv
 
 
 def read_data():
@@ -78,9 +79,12 @@ def draw_graphs(feature, cluster, season):
     ]["indexes"]
     print(f"Build again {indexes}")
     df = pd.read_csv(
-        f"{BASIC_PATH}/{feature}/9/Cluster_{cluster}/anomalies_{season}.csv"
+        f"{BASIC_PATH}/{feature.replace(' ','%20')}/9/Cluster_{cluster}/anomalies_{season}.csv"
     )
-    print(f"{BASIC_PATH}/{feature}/9/Cluster_{cluster}/anomalies_{season}.csv")
+    print(df.head())
+    print(
+        f"Outliers {BASIC_PATH}/{feature.replace(' ','%20')}/9/Cluster_{cluster}/anomalies_{season}.csv"
+    )
     figures = []
     indexes_iter = (
         indexes if isinstance(indexes, int) else re.findall(r"\d", str(indexes))
@@ -99,7 +103,7 @@ def draw_graphs(feature, cluster, season):
 
 
 def build_cluster_section(feature, cluster, season):
-
+    print("Build outliers")
     section = [
         html.Div(
             id="cluster_dropdowns_anomalies",
