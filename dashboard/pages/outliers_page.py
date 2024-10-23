@@ -26,7 +26,6 @@ DROPDOWNS_DIV_STYLE = {
 
 
 BASIC_PATH = "https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_data_test"
-# https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_data_test/all%20params/9/Cluster_1/10/data_daily_spring.csv
 
 
 def read_data():

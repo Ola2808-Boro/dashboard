@@ -44,6 +44,8 @@ DROPDOWNS_DIV_STYLE = {
 
 
 def read_data(cluster_num, params):
+    params = params.replace(" ", "%20")
+    print(f"Params {params}")
     path = f"https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/cluster_analysis/{params}"
     station_dataset = "https://raw.githubusercontent.com/Ola2808-Boro/dashboard/refs/heads/main/data/station_data_selected.csv"
     labels_dataset = f"{path}/labels_{cluster_num}.csv"
